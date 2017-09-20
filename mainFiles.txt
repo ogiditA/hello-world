@@ -1,0 +1,210 @@
+
+//This C++ program supports the basic arithmetic functions for Addition
+Subtraction Multiplication and Division
+
+# include "iostream"
+# include "string"
+using namespace std;
+
+void main()
+{
+ int x, y;
+ float a;
+ cout <<"Enter two numbers\n";
+ cin>>x>>y;
+ a=x+y;
+ cout<<"Your Sum = "<<a<<endl;
+ a=x-y;
+ cout<<"Your sub = "<<a<<endl;
+ a=x*y;
+ cout<<"Your multiplication = "<<a<<endl;
+ a=x/y;
+ cout<<"Your division = "<<a<<endl;
+
+ return 0;
+
+system("pause");
+}
+
+
+
+// This C++ program supports square root function
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+ int x;
+ int s;
+ cout<<"Enter a number"<<endl;
+ cin>>x;
+ s=sqrt(x);
+ cout<<"square root of x is "<<s;
+
+return 0;
+}
+
+
+
+// This C++ program supports the Exponential function
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+ int y;
+ float x,z;
+
+ cout"Enter Number: ";
+ cin>>x;
+ cout<<"Exponent: ";
+ cin>>y;
+ z=pow(x,y);
+ cout<<"Result: "<<z<<endl;
+
+ return 0;
+}
+
+
+
+// The following program support Conversion between the various types 
+   (octal, hexadecimal, integer, binary) from learn C++. 
+   Retrieved from: https://www.programiz.com/cpp-programming/examples/octal-decimal-convert 
+  
+// converting binary number to decimal
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int convertBinaryToDecimal(long long);
+
+int main()
+{
+    long long n;
+
+    cout << "Enter a binary number: ";
+    cin >> n;
+ 
+    cout << n << " in binary = " << convertBinaryToDecimal(n) << "in decimal";
+    return 0;
+}
+
+int convertBinaryToDecimal(long long n)
+{
+    int decimalNumber = 0, i = 0, remainder;
+    while (n!=0)
+    {
+        remainder = n%10;
+        n /= 10;
+        decimalNumber += remainder*pow(2,i);
+        ++i;
+    }
+    return decimalNumber;
+}
+
+
+
+// converting decimal number to binary
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+long long convertDecimalToBinary(int);
+
+int main()
+{
+    int n, binaryNumber;
+
+    cout << "Enter a decimal number: ";
+    cin >> n;
+    binaryNumber = convertDecimalToBinary(n);
+    cout << n << " in decimal = " << binaryNumber << " in binary" << endl ;
+    return 0;
+}
+
+long long convertDecimalToBinary(int n)
+{
+    long long binaryNumber = 0;
+    int remainder, i = 1, step = 1;
+
+    while (n!=0)
+    {
+        remainder = n%2;
+        cout << "Step " << step++ << ": " << n << "/2, Remainder = " << remainder << ", Quotient = " << n/2 << endl;
+        n /= 2;
+        binaryNumber += remainder*i;
+        i *= 10;
+    }
+    return binaryNumber;
+}
+
+
+
+// Converting Decimal Number to Octal
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int decimalToOctal(int decimalNumber);
+
+int main()
+{
+   int decimalNumber;
+   cout << "Enter a decimal number: ";
+   cin >> decimalNumber;
+   cout << decimalNumber << " in decimal = " << decimalToOctal(decimalNumber) << " in octal";
+   
+   return 0;
+}
+
+
+// Function to convert decimal number to octal
+int decimalToOctal(int decimalNumber)
+{
+    int rem, i = 1, octalNumber = 0;
+    while (decimalNumber != 0)
+    {
+        rem = decimalNumber % 8;
+        decimalNumber /= 8;
+        octalNumber += rem * i;
+        i *= 10;
+    }
+    return octalNumber;
+}
+
+// Converting Octal Number to Decimal
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int octalToDecimal(int octalNumber);
+
+int main()
+{
+   int octalNumber;
+   cout << "Enter an octal number: ";
+   cin >> octalNumber;
+   cout << octalNumber << " in octal = " << octalToDecimal(octalNumber) << " in decimal";
+   
+   return 0;
+}
+
+// Function to convert octal number to decimal
+int octalToDecimal(int octalNumber)
+{
+    int decimalNumber = 0, i = 0, rem;
+    while (octalNumber != 0)
+    {
+        rem = octalNumber % 10;
+        octalNumber /= 10;
+        decimalNumber += rem * pow(8, i);
+        ++i;
+    }
+    return decimalNumber;
+}
